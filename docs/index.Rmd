@@ -218,7 +218,7 @@ Discontinuità artificiali nel segnale climatico:
 
 - cambiamento della strumentazione
 
-- ......
+- cambiamento dell'ambiente circostante la strumentazione
 
 #### Quale software? `r emojifont::emoji("thinking")`
 
@@ -226,9 +226,11 @@ Discontinuità artificiali nel segnale climatico:
 
 - [ACMANT](https://github.com/dpeterfree/ACMANT) 
 
-ACMANT e climatol sono due software per l'omogeneizzazione **automatica** delle serie di temperatura e precipitazione. 
+`ACMANT` e `climatol`: omogeneizzazione **automatica** (no metadati). 
 
-Entrambi i software utilizzano anche il contributo di _serie brevi_ per l'omogeneizzazione di _serie lunghe_ in sottoperiodi. 
+Metodi di omogeneizzazione **relativi**.
+
+Le _serie brevi_ contribuiscono all'omogeneizzazione di _serie lunghe_ in sottoperiodi. 
 
 ---
 
@@ -276,9 +278,15 @@ class: inverse,middle,center
 
 # Calcolo degli estremi climatici
 
-Indici ETCCDI (Expert Team on Climate Change Detection and Indices)
+- ETCCDI: _Expert Team on Climate Change Detection and Indices_
 
-Estremi climatici **moderati** 
+- Utilizzano i dati giornalieri di temperatura e precipitazione
+
+- Estremi climatici **moderati** 
+
+- Criteri di completezza molto rigidi
+
+- ET-SCI: _Expert Team on Sector Specific Climate Indices_
 
 #### Quale software? `r emojifont::emoji("thinking")`
 
