@@ -1,7 +1,7 @@
 ---
 title: "Elaborazione di serie temporali<br/><small>per il rapporto</small><br/><small>'Gli indicatori del clima in Italia'</small>"
 author: "Guido Fioravanti"
-institute: ISPRA - Servizio di climatologia operativa
+institute: ISPRA - Sezione di climatologia operativa
 date: "15/10/2020"
 output:
   xaringan::moon_reader:
@@ -63,9 +63,7 @@ class: inverse, middle,center
 
 # Controlli di qualità dei dati<br/>del sistema SCIA
 
-**Due tipologie di controlli:**
-
-Controlli di autoconsistenza delle serie:
+**Quattro tipologie di controlli:**
 
 - Test di integrità di base
 
@@ -83,18 +81,6 @@ Alcuni controlli di qualità sono implementati nei pacchetti R:
 
 - [dataresqc](https://datarescue.climate.copernicus.eu/node/54) `r emojifont::emoji("point_left")`
  
----
-
-# Controlli di qualità dei dati
-
-.center[<img src="./figure/prec_95_perc.png" width="60%">]
-
----
-
-# Controlli di qualità dei dati
-
-.center[<img src="./figure/tmax_uguale_tmin_uguale_zero.png" width="60%">]
-
 ---
 class: middle
 
@@ -132,6 +118,19 @@ class: middle
 |2003|10|31|18.9|18.9|
 |...|...|...|...|...|
 ]
+
+---
+
+# Controlli di qualità dei dati
+
+.center[<img src="./figure/tmax_uguale_tmin_uguale_zero.png" width="60%">]
+
+---
+
+# Controlli di qualità dei dati
+
+.center[<img src="./figure/prec_95_perc.png" width="60%">]
+
 ---
 
 # Controlli di qualità dei dati
@@ -177,7 +176,7 @@ background-position: 165% 0%
 
 .right-column[
 - omogeneizzazione delle serie:  
-  - anche serie brevi (10 anni) possono<br/>contribuire all'omogeneizzazione<br/> di serie più lunghe
+  - anche serie brevi (20 anni) possono<br/>contribuire all'omogeneizzazione<br/> di serie più lunghe
 ]
 
 ---
@@ -188,7 +187,7 @@ I criteri del WMO per il calcolo dei valori climatologici vengono comunemente ut
 
 #### Temperatura 
 
-Regola del "_3/5_": **ammessi 5 valori giornalieri NA, di cui al pù 3 consecutivi.**
+Regola del "_3/5_": **ammessi 5 valori giornalieri NA, di cui al più 3 consecutivi.**
 
 #### Precipitazione
 
