@@ -15,9 +15,10 @@ che contribuiscono al Rapporto "_Gli Indicatori del Clima in Italia_". Tale proc
   - completezza & continuità
 - Identificazione delle discontinuità (breakpoints) e omogeneizzazione delle serie
 - Analisi statistica:
+  - calcolo dei valori climatologici
+  - calcolo delle anomalie
   - stima dei trend
   - calcolo degli indici estremi
-  - calcolo dei valori climatologici
   - altro
   
 ---
@@ -51,6 +52,8 @@ di analisi come l'analisi delle serie storiche e lo studio dei trend (Anderson e
 
 ### Homogenization
 
+:point_right: [Variazioni delle temperatura in Italia: estensione della base dati e aggiornamento della metodologia di calcolo](http://www.scia.isprambiente.it/wwwrootscia/Documentazione/SA_81_18_Variazioni_temperatura.pdf) ISPRA, 2018.
+
 :point_right: [Application of homogenization methods for Ireland'smonthly precipitation records: Comparison of breakdetection results](https://mural.maynoothuniversity.ie/12842/1/joc.6575.pdf). Coll et al., 2020.
 
 :point_right: [Comparison of homogenization methods for daily temperature series against an observation-based benchmark dataset](https://link.springer.com/article/10.1007/s00704-019-03018-0). Squintu et al., 2020.
@@ -81,7 +84,7 @@ Si tratta di indici focalizzati sugli impatti e che utilizzano soglie specificat
 
 :point_right: [Expert Team on Sector-Specific Climate Indices (ET-SCI)](https://climpact-sci.org/about/project/)
 
-:point_right:  [Introduction to the ET-SCI indices](https://www.wmo.int/pages/prog/wcp/ccl/opace/opace4/meetings/documents/fiji2015/D3-2-Alexander_Intro_to_ETSCI_indices.pdf)
+:point_right:  [Introduction to the ET-SCI indices](https://www.wmo.int/pages/prog/wcp/ccl/opace/opace4/meetings/documents/fiji2015/D3-2-Alexander_Intro_to_ETSCI_indices.pdf)]
 
 
 :point_right:  [Useful indicesper sector](https://climpact-sci.org/indices/)
