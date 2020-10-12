@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Elaborazione di serie temporali per il rapporto ‘Gli indicatori del clima in Italia’</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Guido Fioravanti" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Elaborazione di serie temporali<br/><small>per il rapporto</small><br/><small>‘Gli indicatori del clima in Italia’</small>
+### Guido Fioravanti
+### ISPRA - Servizio di climatologia operativa
+### 15/10/2020
+
+---
+
+
+
+
+class: middle,center
+
+&lt;!-- # Criteri per l'elaborazione delle serie di temperatura --&gt;
+
+&lt;img src="./figure/sankeyDiagram2.png" width="130%"&gt;
+
+&lt;!--
+
+&lt;large&gt;...ma validi (in parte) anche per le serie di precipitazione ☔️&lt;/large&gt;
+
+--&gt;
+
+---
+
+class: middle, center
+
+# [SCIA &lt;br/&gt;&lt;br/&gt; Sistema nazionale&lt;br/&gt; per l'elaborazione e diffusione&lt;br/&gt;dei dati climatici](http://www.scia.isprambiente.it)
+
+---
+
+class: inverse, middle,center
+
+# Controlli di qualità dei dati
+
+.footnote[La disponibilità di lunghe serie di dati strumentali di buona qualità è di fondamentale importanza per lo  studio  della  variabilità  del  clima  e  in  particolare  degli  eventi  estremi.]
+
+---
+
+# Controlli di qualità dei dati&lt;br/&gt;del sistema SCIA
+
+- omogeneità dei controlli 
+
+- controlli automatici
+
+- sottoinsieme dei controlli per il dataset&lt;br/&gt;
+ **Global Historical Climatological Network**&lt;br/&gt;(National  Climatic  Data  Center - NOAA)
+ 
+&lt;br/&gt; 
+
+
+.pull-left[[Comprehensive Automated Quality Assurance of Daily Surface&lt;br/&gt; Observations](https://journals.ametsoc.org/jamc/article/49/8/1615/13419/Comprehensive-Automated-Quality-Assurance-of-Daily) &lt;br/&gt; &lt;small&gt;Durre et al., 2010&lt;/small&gt; 👈]
+
+.pull-right[[Controlli di qualità delle serie di temperatura e  precipitazione](http://www.scia.isprambiente.it/wwwrootscia/Documentazione/Rapporto_controlli_qualit%c3%a0_clima.pdf) &lt;br/&gt; &lt;small&gt;ISPRA, 2016&lt;/small&gt; 👈]
+
+---
+
+# Controlli di qualità dei dati&lt;br/&gt;del sistema SCIA
+
+**Due tipologie di controlli:**
+
+Controlli di autoconsistenza delle serie:
+
+- Test di integrità di base
+
+- Test per l’identificazione dei valori anomali
+
+- Test di consistenza interna e temporale
+
+- Test di consistenza spaziale (**solo per le serie di temperatura**) 👈
+
+#### Quale software? 🤔
+ 
+Alcuni controlli di qualità sono implementati nei pacchetti R:
+
+- [RClimDex](https://github.com/ECCC-CDAS/RClimDex) 👈
+
+- [dataresqc](https://datarescue.climate.copernicus.eu/node/54) 👈
+ 
+---
+
+# Controlli di qualità dei dati
+
+.center[&lt;img src="./figure/prec_95_perc.png" width="60%"&gt;]
+
+---
+
+# Controlli di qualità dei dati
+
+.center[&lt;img src="./figure/tmax_uguale_tmin_uguale_zero.png" width="60%"&gt;]
+
+---
+class: middle
+
+# Controlli di qualità dei dati 
+
+.pull-left[
+| Anno | mese | giorno | Tmax | Tmin |
+| --- | --- | --- | --- | --- |
+|2003|10|4|29.4|29.4|
+|2003|10|5|29.4|29.4|
+|2003|10|6|29.4|29.4|
+|2003|10|7|29.4|29.4|
+|2003|10|8|29.4|29.4|
+|2003|10|9|29.4|29.4|
+|2003|10|10|29.4|29.4|
+|2003|10|11|29.4|29.4|
+|2003|10|12|29.4|29.4|
+|2003|10|13|29.4|29.4|
+|2003|10|14|29.4|29.4|
+|---|---|---|---|---|
+
+]
+
+.pull-right[
+| Anno | mese | giorno | Tmax | Tmin |
+| --- | --- | --- | --- | --- |
+|2003|10|23|18.9|18.9|
+|2003|10|24|18.9|18.9|
+|2003|10|25|18.9|18.9|
+|2003|10|26|18.9|18.9|
+|2003|10|27|18.9|18.9|
+|2003|10|28|18.9|18.9|
+|2003|10|29|18.9|18.9|
+|2003|10|30|18.9|18.9|
+|2003|10|31|18.9|18.9|
+|...|...|...|...|...|
+]
+---
+
+# Controlli di qualità dei dati
+
+.center[&lt;img src="./figure/corroboration_test.png" width="100%"&gt;]
+
+---
+
+class: inverse,middle,center
+
+# Lunghezza, completezza e continuità &lt;br/&gt;
+
+&lt;!-- &lt;img src="./figure/infinito_squared.png" width="5%"&gt; --&gt;
+
+# delle serie climatiche
+
+---
+background-image: url(./figure/metro.png)
+background-size: 50% 100%
+background-position: 165% 0%
+
+# Lunghezza delle serie
+.left-column[
+#### Quali gli obiettivi dell'analisi?? 
+]
+
+--
+
+.right-column[
+- stima dei trend di lungo periodo:
+  - 30 anni di dati (?)
+]
+
+--
+
+.right-column[
+- valori climatologici:
+  - almeno 24 anni su 30&lt;br/&gt;(valori climatologici standard WMO)
+  - valori climatologici NON standard&lt;br/&gt; (20 anni su 30, 15 anni su 30 ...)
+]
+
+--
+
+.right-column[
+- omogeneizzazione delle serie:  
+  - anche serie brevi (10 anni) possono&lt;br/&gt;contribuire all'omogeneizzazione&lt;br/&gt; di serie più lunghe
+]
+
+---
+
+# Completezza e continuità delle serie
+
+I criteri del WMO per il calcolo dei valori climatologici vengono comunemente utilizzati come criterio di completezza delle serie ([Anderson and Gough, 2018](https://rmets.onlinelibrary.wiley.com/doi/pdf/10.1002/joc.5801))
+
+#### Temperatura 
+
+Regola del "_3/5_": **ammessi 5 valori giornalieri NA, di cui al pù 3 consecutivi.**
+
+#### Precipitazione
+
+Criteri molto restrittivi: **un solo dato giornaliero NA invalida il corrispettivo aggregato mensile.**
+
+#### Aggregazione dati mensili
+
+Un anno in cui almeno un mese è NA non viene considerato valido...**ma per il Rapporto ISPRA si considerano validi anche anni con 3 mesi NA purchè non appartengano tutti alla stessa stagione**.
+
+---
+
+class: inverse,middle,center
+
+# Omogeneizzazione delle serie climatiche
+
+.footnote[Una serie omogenea è una serie la cui variabilità dipende solo da fattori climatici]
+
+---
+
+# Omogeneizzazione
+
+Discontinuità artificiali nel segnale climatico:
+
+- nuove procedure di elaborazione dei dati
+
+- spostamento della stazione osservativa
+
+- cambiamento della strumentazione
+
+- ......
+
+#### Quale software? 🤔
+
+- [climatol](https://cran.r-project.org/web/packages/climatol/index.html) 👈 pacchetto R
+
+- [ACMANT](https://github.com/dpeterfree/ACMANT) 
+
+ACMANT e climatol sono due software per l'omogeneizzazione **automatica** delle serie di temperatura e precipitazione. 
+
+Entrambi i software utilizzano anche il contributo di _serie brevi_ per l'omogeneizzazione di _serie lunghe_ in sottoperiodi. 
+
+---
+
+class: inverse,middle,center
+
+# Stima dei trend 
+
+---
+
+&lt;!-- background-image: url(./figure/raw_vs_omog_trend.png)
+background-position: 100% 80%
+background-size: 50% --&gt;
+
+# Stima dei trend
+
+- regressione lineare classica (ipotesi: residui i.i.d)
+
+- stimatore **non parametrico** di Theil-Sen e test non parametrico di Mann-Kendal
+
+.center[&lt;img src="./figure/raw_vs_omog_trend.png" width="50%"&gt;]
+
+La funzione `zyp.trend.csv/zyp.trend.vector` del pacchetto R [zyp](https://cran.r-project.org/web/packages/zyp/zyp.pdf) implementa il _pre-whitening_ della serie temporale.
+
+---
+
+class: inverse,middle,center
+
+# Calcolo degli estremi climatici&lt;br/&gt; 🌩
+
+---
+
+# Calcolo degli estremi climatici
+
+.center[&lt;img src="./figure/grafico_r95ptot_anomalie.jpg-1.jpg" width="100%"&gt;]
+
+---
+
+# Calcolo degli estremi climatici
+
+
+.center[&lt;img src="./figure/grafico_su_anomalie.png" width="100%"&gt;]
+
+
+---
+
+# Calcolo degli estremi climatici
+
+Indici ETCCDI (Expert Team on Climate Change Detection and Indices)
+
+Estremi climatici **moderati** 
+
+#### Quale software? 🤔
+
+- Indici ETCCDI:
+  - [climdex.pcic](https://github.com/pacificclimate/climdex.pcic)
+
+- Indici ET-SCI:
+  - [ClimPACT2](https://github.com/ARCCSS-extremes/climpact2)
+
+---
+
+class: middle
+
+# Altre  informazioni
+
+.pull-left[.center[[A new homogenized daily dataset&lt;br/&gt;for temperature variability assessment in Italy](https://doi.org/10.1002/joc.6177)
+
+&lt;small&gt;Fioravanti G., Piervitali E., Desiato F.&lt;br/&gt;Int J Climatol. 2019; 39: 5635– 5654&lt;/small&gt;
+]]
+
+.pull-right[.center[[Variazioni della temperatura in Italia: estensione della base dati &lt;br/&gt;e aggiornamento della &lt;br/&gt;metodologia di calcolo](http://www.scia.isprambiente.it/wwwrootscia/Documentazione/SA_81_18_Variazioni_temperatura.pdf).
+
+&lt;small&gt;Fioravanti G., Piervitali, E.&lt;br/&gt;ISPRA, 2018&lt;/small&gt;
+]]
+
+In [questa pagina](https://github.com/scia-ispra/indici_climatici) sono raccolte alcune informazioni (documenti tecnici, software, papers) utili all'elaborazione delle serie climatiche.
+
+---
+
+class: middle, center, inverse
+
+# Grazie per l'attenzione!
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
