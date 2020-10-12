@@ -83,6 +83,9 @@ Si tratta di indici focalizzati sugli impatti e che utilizzano soglie specificat
 
 :point_right:  [Introduction to the ET-SCI indices](https://www.wmo.int/pages/prog/wcp/ccl/opace/opace4/meetings/documents/fiji2015/D3-2-Alexander_Intro_to_ETSCI_indices.pdf)
 
+
+:point_right:  [Useful indicesper sector](https://climpact-sci.org/indices/)
+
 ---
 
 ## Software :floppy_disk: 
