@@ -28,7 +28,8 @@ class: middle,center
 -->
 
 ---
-
+background-image: url(./figure/logoispra_hr.png)
+background-size: 50%
 class: middle, center
 
 # [SCIA <br/><br/> Sistema nazionale<br/> per l'elaborazione e diffusione<br/>dei dati climatici](http://www.scia.isprambiente.it)
@@ -195,7 +196,8 @@ Criteri molto restrittivi: **un solo dato giornaliero NA invalida il corrispetti
 
 #### Aggregazione dati mensili
 
-Un anno in cui almeno un mese è NA non viene considerato valido...**ma per il Rapporto ISPRA si considerano validi anche anni con 3 mesi NA purchè non appartengano tutti alla stessa stagione**.
+- Un anno in cui almeno un mese è NA non viene considerato valido
+- Un criterio meno stringente: accettare fino a 3 mesi NA purchè non tutti alla stessa stagione
 
 ---
 

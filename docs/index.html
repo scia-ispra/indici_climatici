@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Elaborazione di serie temporali per il rapporto ‘Gli indicatori del clima in Italia’</title>
+    <title>Elaborazione di serie temporali per il rapporto Gli indicatori del clima in Italia</title>
     <meta charset="utf-8" />
     <meta name="author" content="Guido Fioravanti" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
@@ -34,7 +34,8 @@ class: middle,center
 --&gt;
 
 ---
-
+background-image: url(./figure/logoispra_hr.png)
+background-size: 50%
 class: middle, center
 
 # [SCIA &lt;br/&gt;&lt;br/&gt; Sistema nazionale&lt;br/&gt; per l'elaborazione e diffusione&lt;br/&gt;dei dati climatici](http://www.scia.isprambiente.it)
@@ -182,7 +183,7 @@ background-position: 165% 0%
 
 .right-column[
 - omogeneizzazione delle serie:  
-  - anche serie brevi (10 anni) possono&lt;br/&gt;contribuire all'omogeneizzazione&lt;br/&gt; di serie più lunghe
+  - anche serie brevi (20 anni) possono&lt;br/&gt;contribuire all'omogeneizzazione&lt;br/&gt; di serie più lunghe
 ]
 
 ---
@@ -193,7 +194,7 @@ I criteri del WMO per il calcolo dei valori climatologici vengono comunemente ut
 
 #### Temperatura 
 
-Regola del "_3/5_": **ammessi 5 valori giornalieri NA, di cui al pù 3 consecutivi.**
+Regola del "_3/5_": **ammessi 5 valori giornalieri NA, di cui al più 3 consecutivi.**
 
 #### Precipitazione
 
@@ -201,7 +202,8 @@ Criteri molto restrittivi: **un solo dato giornaliero NA invalida il corrispetti
 
 #### Aggregazione dati mensili
 
-Un anno in cui almeno un mese è NA non viene considerato valido...**ma per il Rapporto ISPRA si considerano validi anche anni con 3 mesi NA purchè non appartengano tutti alla stessa stagione**.
+- Un anno in cui almeno un mese è NA non viene considerato valido
+- Un criterio meno stringente: accettare fino a 3 mesi NA purchè non tutti alla stessa stagione
 
 ---
 
