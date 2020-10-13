@@ -1,26 +1,15 @@
 ---
-title: "Elaborazione di serie temporali<br/><small>per il rapporto<br/><br/>'Gli indicatori del clima in Italia'<br/></small>"
-author: <small>`r emojifont::emoji('man_teacher')` Guido Fioravanti</small>
-institute: <small>ISPRA - Sezione di climatologia operativa</small>
+title: "Elaborazione di serie temporali<br/><small>per il rapporto</small><br/><small>'Gli indicatori del clima in Italia'</small>"
+author: "Guido Fioravanti"
+institute: ISPRA - Sezione di climatologia operativa
 date: "15/10/2020"
 output:
   xaringan::moon_reader:
     lib_dir: libs
-    css: 
-      - default
-      - default-fonts
-      - duke-blue
-      - hygge-duke
-      - libs/cc-fonts.css
-      - libs/figure-captions.css
     nature:
       highlightStyle: github
-      highlightLines: true
       countIncrementalSlides: false
 ---
-```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE)
-```
 
 ```{r,include=FALSE,message=FALSE,warning=FALSE,echo=FALSE}
 library("emojifont")
@@ -45,15 +34,13 @@ background-position: 50% 90%
 
 class: middle, center
 
-# [SCIA <br/><br/> Sistema nazionale<br/><br/> <small>per l'elaborazione e diffusione<br/><br/>dei dati climatici</small>](http://www.scia.isprambiente.it)
+# [SCIA <br/><br/> Sistema nazionale<br/> per l'elaborazione e diffusione<br/>dei dati climatici](http://www.scia.isprambiente.it)
 
 ---
 
 class: inverse, middle,center
 
-# Controlli di qualità dei dati<br/> <br/> `r emojifont::emoji("microscope")` 
-
-
+# Controlli di qualità dei dati
 
 .footnote[La disponibilità di lunghe serie di dati strumentali di buona qualità è di fondamentale importanza per lo  studio  della  variabilità  del  clima  e  in  particolare  degli  eventi  estremi.]
 
@@ -66,15 +53,14 @@ class: inverse, middle,center
 - controlli _automatici_
 
 I controlli su SCIA sono un sottoinsieme dei controlli per il dataset
-
-.center[ **Global Historical Climatological Network**<br/>(National Climatic  Data  Center - NOAA)] 
+ **Global Historical Climatological Network** (National Climatic  Data  Center - NOAA)
  
 <br/> 
 
 
-.pull-left[.full-width[.content-box-yellow[[Comprehensive Automated Quality Assurance of Daily Surface<br/> Observations](https://journals.ametsoc.org/jamc/article/49/8/1615/13419/Comprehensive-Automated-Quality-Assurance-of-Daily) <br/> <small>Durre et al., 2010</small> `r emojifont::emoji("point_left")`]]]
+.pull-left[[Comprehensive Automated Quality Assurance of Daily Surface<br/> Observations](https://journals.ametsoc.org/jamc/article/49/8/1615/13419/Comprehensive-Automated-Quality-Assurance-of-Daily) <br/> <small>Durre et al., 2010</small> `r emojifont::emoji("point_left")`]
 
-.pull-right[.full-width[.content-box-yellow[[Controlli di qualità delle serie di temperatura e  precipitazione](http://www.scia.isprambiente.it/wwwrootscia/Documentazione/Rapporto_controlli_qualit%c3%a0_clima.pdf) <br/> <small>ISPRA, 2016</small> `r emojifont::emoji("point_left")`]]]
+.pull-right[[Controlli di qualità delle serie di temperatura e  precipitazione](http://www.scia.isprambiente.it/wwwrootscia/Documentazione/Rapporto_controlli_qualit%c3%a0_clima.pdf) <br/> <small>ISPRA, 2016</small> `r emojifont::emoji("point_left")`]
 
 ---
 
@@ -90,7 +76,7 @@ I controlli su SCIA sono un sottoinsieme dei controlli per il dataset
 
 - Test di consistenza spaziale (**solo per le serie di temperatura**) `r emojifont::emoji("point_left")`
 
-### Quale software? `r emojifont::emoji("thinking")`
+#### Quale software? `r emojifont::emoji("thinking")`
  
 Alcuni controlli di qualità sono implementati nei pacchetti R:
 
@@ -133,7 +119,7 @@ class: middle
 |2003|10|29|18.9|18.9|
 |2003|10|30|18.9|18.9|
 |2003|10|31|18.9|18.9|
-|---|---|---|---|---|
+|...|...|...|...|...|
 ]
 
 ---
@@ -158,7 +144,11 @@ class: middle
 
 class: inverse,middle,center
 
-# Lunghezza, completezza e continuità <br/><br/> `r emojifont::emoji("link")` <br/><br/> delle serie climatiche
+# Lunghezza, completezza e continuità <br/>
+
+<!-- <img src="./figure/infinito_squared.png" width="5%"> -->
+
+# delle serie climatiche
 
 ---
 background-image: url(./figure/metro.png)
@@ -225,7 +215,7 @@ Criteri molto restrittivi: **un solo dato giornaliero NA invalida il corrispetti
 
 class: inverse,middle,center
 
-# Omogeneizzazione delle serie climatiche <br/> <br/> `r emojifont::emoji("hammer")` 
+# Omogeneizzazione <br/>delle serie climatiche
 
 .footnote[Una serie omogenea è una serie la cui variabilità dipende solo da fattori climatici]
 
@@ -241,7 +231,7 @@ Discontinuità artificiali nel segnale climatico. Ad esempio:
 
 - nuova strumentazione
 
-### Software per omogeneizzazione _automatica_? `r emojifont::emoji("thinking")`
+#### Software per omogeneizzazione **automatica** (no metadati)? `r emojifont::emoji("thinking")`
 
 - [climatol](https://cran.r-project.org/web/packages/climatol/index.html)
 
@@ -255,7 +245,7 @@ Metodi di omogeneizzazione **relativi**.
 
 class: inverse,middle,center
 
-# Stima dei trend <br/> <br/>`r emojifont::emoji("chart_with_upwards_trend")`  
+# Stima dei trend 
 
 ---
 
@@ -265,7 +255,7 @@ background-size: 50% -->
 
 # Stima dei trend
 
-- regressione lineare _classica_ (ipotesi: residui i.i.d)
+- regressione lineare classica (ipotesi: residui i.i.d)
 
 - stimatore **non parametrico** di Theil-Sen e test non parametrico di Mann-Kendal
 
@@ -277,7 +267,7 @@ La funzione `zyp.trend.csv/zyp.trend.vector` del pacchetto R [zyp](https://cran.
 
 class: inverse,middle,center
 
-# Calcolo degli estremi climatici<br/><br/> `r emojifont::emoji("cloud_with_lightning")`
+# Calcolo degli estremi climatici<br/> `r emojifont::emoji("cloud_with_lightning")`
 
 ---
 
@@ -297,7 +287,7 @@ class: inverse,middle,center
 
 # Calcolo degli estremi climatici
 
-ETCCDI: _Expert Team on Climate Change Detection and Indices_
+- ETCCDI: _Expert Team on Climate Change Detection and Indices_
 
 - Utilizzano i dati giornalieri di temperatura e precipitazione
 
@@ -307,13 +297,14 @@ ETCCDI: _Expert Team on Climate Change Detection and Indices_
 
 - ET-SCI: _Expert Team on Sector Specific Climate Indices_
 
-### Quale software? `r emojifont::emoji("thinking")`
+#### Quale software? `r emojifont::emoji("thinking")`
 
-- [climdex.pcic](https://github.com/pacificclimate/climdex.pcic): indici ETCCDI 
+- Indici ETCCDI:
+  - [climdex.pcic](https://github.com/pacificclimate/climdex.pcic)
 
-- [ClimPACT2](https://github.com/ARCCSS-extremes/climpact2): Indici ET-SCI<sup>1</sup>
+- Indici ET-SCI:
+  - [ClimPACT2](https://github.com/ARCCSS-extremes/climpact2)
 
-.footnote[[1] Expert Team on Sector-Specific Climate Indices]
 ---
 
 class: middle
@@ -330,12 +321,11 @@ class: middle
 <small>Fioravanti G., Piervitali, E.<br/>ISPRA, 2018</small>
 ]]
 
-
-.full-width[.content-box-yellow[In [questa pagina](https://github.com/scia-ispra/indici_climatici) sono raccolte alcune informazioni (documenti tecnici, software, papers) utili all'elaborazione delle serie climatiche]]
+In [questa pagina](https://github.com/scia-ispra/indici_climatici) sono raccolte alcune informazioni (documenti tecnici, software, papers) utili all'elaborazione delle serie climatiche.
 
 ---
 
 class: middle, center, inverse
 
-# Grazie per l'attenzione! <br/><br/> `r emojifont::emoji("clinking_glasses")`
+# Grazie per l'attenzione!
   
