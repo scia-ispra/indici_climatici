@@ -1,7 +1,7 @@
 ---
 title: "Elaborazione di serie temporali<br/><small>per il rapporto<br/><br/>'Gli indicatori del clima in Italia'<br/></small>"
-author: <small>`r emojifont::emoji('man_teacher')` Guido Fioravanti</small>
-institute: <small>ISPRA - Sezione di climatologia operativa</small>
+author: <small>`r emojifont::emoji('man_teacher')` Guido Fioravanti<br/><br/><a href='mailto:guido.fioravanti@isprambiente.it' class='email'>guido.fioravanti@isprambiente.it</a></small>
+institute: <small>ISPRA - Sezione di climatologia operativa</small> 
 date: "15/10/2020"
 output:
   xaringan::moon_reader:
@@ -39,11 +39,11 @@ class: middle,center
 -->
 
 ---
+class: middle, center
+
 background-image: url(./figure/logoispra_hr.png)
 background-size: 15%
 background-position: 50% 90%
-
-class: middle, center
 
 # [SCIA <br/><br/> Sistema nazionale<br/><br/> <small>per l'elaborazione e diffusione<br/><br/>dei dati climatici</small>](http://www.scia.isprambiente.it)
 
@@ -59,26 +59,26 @@ class: inverse, middle,center
 
 ---
 
-# Controlli di qualità dei dati<br/>del sistema SCIA
+# Controlli di qualità dei dati
 
 - _omogeneità_ dei controlli 
 
 - controlli _automatici_
 
-I controlli su SCIA sono un sottoinsieme dei controlli per il dataset
+I controlli su SCIA sono un sottoinsieme dei controlli per il dataset:
 
 .center[ **Global Historical Climatological Network**<br/>(National Climatic  Data  Center - NOAA)] 
  
 <br/> 
 
 
-.pull-left[.full-width[.content-box-yellow[[Comprehensive Automated Quality Assurance of Daily Surface<br/> Observations](https://journals.ametsoc.org/jamc/article/49/8/1615/13419/Comprehensive-Automated-Quality-Assurance-of-Daily) <br/> <small>Durre et al., 2010</small> `r emojifont::emoji("point_left")`]]]
+.pull-left[.full-width[.content-box-yellow[[Comprehensive Automated Quality Assurance of Daily Surface Observations](https://journals.ametsoc.org/jamc/article/49/8/1615/13419/Comprehensive-Automated-Quality-Assurance-of-Daily) <br/> <small>Durre et al., 2010</small> `r emojifont::emoji("point_left")`]]]
 
 .pull-right[.full-width[.content-box-yellow[[Controlli di qualità delle serie di temperatura e  precipitazione](http://www.scia.isprambiente.it/wwwrootscia/Documentazione/Rapporto_controlli_qualit%c3%a0_clima.pdf) <br/> <small>ISPRA, 2016</small> `r emojifont::emoji("point_left")`]]]
 
 ---
 
-# Controlli di qualità dei dati<br/>del sistema SCIA
+# Controlli di qualità dei dati
 
 **Quattro tipologie di controlli:**
 
@@ -198,15 +198,15 @@ background-position: 165% 0%
 
 I criteri del WMO per il calcolo dei valori climatologici vengono comunemente utilizzati come criterio di completezza delle serie ([Anderson and Gough, 2018](https://rmets.onlinelibrary.wiley.com/doi/pdf/10.1002/joc.5801))
 
-#### Temperatura 
+### Temperatura 
 
 Regola del "_3/5_": **ammessi 5 valori giornalieri NA, di cui al più 3 consecutivi.**
 
-#### Precipitazione
+### Precipitazione
 
 Criteri molto restrittivi: **un solo dato giornaliero NA invalida il corrispettivo aggregato mensile.**
 
-#### Aggregazione dati mensili
+### Aggregazione dati mensili
 
 - Un anno in cui almeno un mese è NA non viene considerato valido
 - Un criterio meno stringente: accettare fino a 3 mesi NA purchè non tutti alla stessa stagione
@@ -231,7 +231,7 @@ class: inverse,middle,center
 
 ---
 
-# Omogeneizzazione
+# Omogeneizzazione (temperatura)
 
 Discontinuità artificiali nel segnale climatico. Ad esempio:
 
@@ -250,6 +250,29 @@ Discontinuità artificiali nel segnale climatico. Ad esempio:
 Metodi di omogeneizzazione **relativi**.
 
 `climatol`: utilizza _serie brevi_ per omogeneizzare le _serie lunghe_ in sottoperiodi. 
+
+---
+
+# Omogeneizzazione (precipitazione)
+
+L'integrità delle serie di precipitazione è stata testata seguendo l'approccio descritto da Wijngaard et al., (2003) nel paper:
+
+.center[[Homogeneity of 20th century European daily temperature and precipitation series](https://rmets.onlinelibrary.wiley.com/doi/10.1002/joc.906). .]
+
+Quattro test statistici:
+- Standard Normal Homogeneity Test
+- Buishand range test
+- Pettitt test
+- Von Neumann ratio test
+
+Le serie _sospette_ sono state escluse dall'analisi, nessun processo di omogeneizzazione.
+
+### Software per testate l'omogeneità delle serie? `r emojifont::emoji("thinking")`
+
+- [trend](https://cran.r-project.org/web/packages/trend/vignettes/trend.pdf)
+- [climtrends](https://cran.r-project.org/src/contrib/Archive/climtrends/)
+
+`climtrends` attualmente non più sviluppato.
 
 ---
 
