@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Elaborazione di serie temporali per il rapporto  ‘Gli indicatori del clima in Italia’</title>
+    <title>Elaborazione di serie temporali per il rapporto  Gli indicatori del clima in Italia</title>
     <meta charset="utf-8" />
     <meta name="author" content="👨‍🏫 Guido Fioravanti  guido.fioravanti@isprambiente.it" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
@@ -26,19 +26,6 @@ class: center, middle, inverse, title-slide
 
 
 
-class: middle,center
-
-&lt;!-- # Criteri per l'elaborazione delle serie di temperatura --&gt;
-
-&lt;img src="./figure/sankeyDiagram2.png" width="130%"&gt;
-
-&lt;!--
-
-&lt;large&gt;...ma validi (in parte) anche per le serie di precipitazione ☔️&lt;/large&gt;
-
---&gt;
-
----
 class: middle, center
 
 background-image: url(./figure/logoispra_hr.png)
@@ -52,8 +39,6 @@ background-position: 50% 90%
 class: inverse, middle,center
 
 # Controlli di qualità dei dati&lt;br/&gt; &lt;br/&gt; 🔬 
-
-
 
 .footnote[La disponibilità di lunghe serie di dati strumentali di buona qualità è di fondamentale importanza per lo  studio  della  variabilità  del  clima  e  in  particolare  degli  eventi  estremi.]
 
@@ -161,6 +146,26 @@ class: inverse,middle,center
 # Lunghezza, completezza e continuità &lt;br/&gt;&lt;br/&gt; 🔗 &lt;br/&gt;&lt;br/&gt; delle serie climatiche
 
 ---
+
+# Completezza e continuità delle serie
+
+I criteri del WMO per il calcolo dei valori climatologici vengono comunemente utilizzati come criterio di completezza delle serie ([Anderson and Gough, 2018](https://rmets.onlinelibrary.wiley.com/doi/pdf/10.1002/joc.5801))
+
+### Temperatura 
+
+Regola del "_3/5_": **ammessi 5 valori giornalieri NA, di cui al più 3 consecutivi.**
+
+### Precipitazione
+
+Criteri molto restrittivi: **un solo dato giornaliero NA invalida il corrispettivo aggregato mensile.**
+
+### Aggregazione dati mensili
+
+- Un anno in cui almeno un mese è NA non viene considerato valido
+- Un criterio meno stringente: accettare fino a 3 mesi NA purchè non tutti alla stessa stagione
+
+---
+
 background-image: url(./figure/metro.png)
 background-size: 50% 100%
 background-position: 165% 0%
@@ -196,30 +201,19 @@ background-position: 165% 0%
 
 # Completezza e continuità delle serie
 
-I criteri del WMO per il calcolo dei valori climatologici vengono comunemente utilizzati come criterio di completezza delle serie ([Anderson and Gough, 2018](https://rmets.onlinelibrary.wiley.com/doi/pdf/10.1002/joc.5801))
-
-### Temperatura 
-
-Regola del "_3/5_": **ammessi 5 valori giornalieri NA, di cui al più 3 consecutivi.**
-
-### Precipitazione
-
-Criteri molto restrittivi: **un solo dato giornaliero NA invalida il corrispettivo aggregato mensile.**
-
-### Aggregazione dati mensili
-
-- Un anno in cui almeno un mese è NA non viene considerato valido
-- Un criterio meno stringente: accettare fino a 3 mesi NA purchè non tutti alla stessa stagione
-
----
-
-# Completezza e continuità delle serie
-
 &lt;img src="./figure/285_tmax__serie_1.png" width="100%"&gt;
 
 - Serie con almeno l'80% degli anni validi
 
 - al  massimo  quattro  anni  consecutivi  mancanti
+
+---
+
+class: middle,center
+
+&lt;!-- # Criteri per l'elaborazione delle serie di temperatura --&gt;
+
+&lt;img src="./figure/sankeyDiagram2.png" width="130%"&gt;
 
 ---
 
