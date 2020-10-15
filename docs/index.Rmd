@@ -284,7 +284,7 @@ background-size: 50% -->
 
 - regressione lineare _classica_ (ipotesi: residui i.i.d)
 
-- stimatore **non parametrico** di Theil-Sen e test non parametrico di Mann-Kendal
+- stimatore **non parametrico** di Theil-Sen e test non parametrico di Mann-Kendall
 
 .center[<img src="./figure/raw_vs_omog_trend.png" width="50%">]
 
@@ -349,8 +349,6 @@ class: middle
 
 
 .full-width[.content-box-yellow[In [questa pagina](https://github.com/scia-ispra/indici_climatici) sono raccolte alcune informazioni (documenti tecnici, software, papers) utili all'elaborazione delle serie climatiche]]
-
----
 
 ---
 
