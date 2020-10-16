@@ -74,7 +74,7 @@ di analisi come l'analisi delle serie storiche e lo studio dei trend (Anderson e
 
 :point_right: [On the use of indices to study extreme precipitation on sub-daily and daily timescales](https://iopscience.iop.org/article/10.1088/1748-9326/ab51b6). Lisa V Alexander et al., 2019.
 
-:point_right: [Indices for monitoring changes in extremes based on daily temperature and precipitation data](https://www.academia.edu/13435321/Indices_for_monitoring_changes_in_extremes_based_on_daily_temperature_and_precipitation_data). Zhang et al., 2011.
+:point_right: [Indices for monitoring changes in extremes based on daily temperature and precipitation data](https://www.geos.ed.ac.uk/~ghegerl/assets/WIRES_index.pdf). Zhang et al., 2011.
 
 :point_right: [Development of an Updated Global Land In Situ‐Based Data Set of Temperature and Precipitation Extremes: HadEX3](https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2019JD032263). Dunn et al., 2020. 
 
